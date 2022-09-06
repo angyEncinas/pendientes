@@ -8,7 +8,13 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const tar = tarea.value;
-  tareas.push(tar)
+  if(tar ==""){
+    div.innerHTML = "<p>" + "No es posible registrar una tarea pendiente sin descripción" + "</p>";
+  }else{
+    tareas.push(tar)
+    div.innerHTML = "<p>" + tareas[0] + "</p>";
+  }
+  
 
-  div.innerHTML = "<p>" + tareas[0] + "</p>";
+  
 });
