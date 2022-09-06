@@ -13,7 +13,13 @@ form.addEventListener("submit", (event) => {
   }
   else if(tar.length <= 50){
     tareas.push(tar)
-    div.innerHTML = "<p>" + tareas[0] + "</p>";
+    let txt = ""
+    tareas.forEach(myfunction)
+    div.innerHTML =txt;
+
+    function myfunction(value){
+      txt+= value +"</br>";
+    }
   }
   else{
     div.innerHTML = "<p>" + "Reduzca la cantidad de caracteres por favor" + "</p>";
